@@ -1,0 +1,10 @@
+mpic++ -fopenmp -o graph_binary_better.o -c graph_binary_better.cpp -ansi -O5 -Wall
+mpic++ -fopenmp -o graph_binary.o -c graph_binary.cpp -ansi -O5 -Wall
+mpic++ -fopenmp -o community.o -c community.cpp -ansi -O5 -Wall
+mpic++ -fopenmp -o community-main.o -c community-main.cpp -ansi -O5 -Wall
+mpic++ -fopenmp -o community graph_binary_better.o graph_binary.o community.o community-main.o -ansi -lm -Wall
+mpic++ -fopenmp -o graph.o -c graph.cpp -ansi -O5 -Wall
+mpic++ -fopenmp -o converter.o -c converter.cpp -ansi -O5 -Wall
+mpic++ -fopenmp -o convert graph.o converter.o -ansi -lm -Wall
+mpic++ -fopenmp -o lib_plouvain.o -c lib_plouvain.cpp -ansi -O5 -Wall
+ar rcs libplouvain.a graph_binary_better.o graph_binary.o community.o lib_plouvain.o	
