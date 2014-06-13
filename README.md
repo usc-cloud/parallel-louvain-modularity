@@ -1,7 +1,7 @@
 Overview
 --------
 
-Communities play an important role throughout the modern world and arise in numerous scenarios ranging from traffic monitoring to identifying criminal activity cells in social networks. Most interconnected datasets exhibit clusters of strongly interconnected data. Our parallel Louvain algorithm helps uncover accurate communities many times faster than the original sequential code. This makes it suitable for environments where data is distributed geographically but only for high performance clusters that require fast community discovery for subsequent analysis. 
+Communities play an important role throughout the modern world and arise in numerous scenarios ranging from traffic monitoring to identifying criminal activity cells in social networks. Most interconnected datasets exhibit clusters of strongly interconnected data. Our parallel Louvain algorithm helps uncover accurate communities many times faster than the original sequential code. This makes it suitable for environments where data is distributed geographically besides centralized high performance clusters. 
 
 Objectives
 ----------
@@ -27,6 +27,6 @@ Given the wide spread adoption of the cloud based frameworks a Map Reduce versio
 Installation
 ------------
 
-A quick start guide can be found [here](QuickStart.md) together with a precompiled VM to help you get started.
+A quick start guide can be found [here](/https://github.com/usc-cloud/parallel-louvain-modularity/blob/master/QuickStart.md) together with a precompiled VM to help you get started.
 
 A detailed guide on how to install the software on a distributed setup can be found [here](/path/to/Louvain-install).
