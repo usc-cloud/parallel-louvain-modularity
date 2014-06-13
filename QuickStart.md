@@ -119,5 +119,11 @@ Example:<br><br></p>
 17: (12 3) (17 6) (24 2) (31 3) (51 2) (72 3) (3120 1)<br>
 </p>
 
+Publications: <br>
+
+ <a href="http://www-scf.usc.edu/~cwickram/pubs/wickramaarachchi_hpec_2014.pdf">Fast Parallel Algorithm For Unfolding Of Communities In Large Graphs</a>, 
+Charith Wickramaarachchi, Marc Frincu, Patrick Small and Viktor Prasanna,
+IEEE High Performance Extreme Computing Conference(HPEC '14), 2014
+
 </p>
 
