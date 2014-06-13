@@ -6,7 +6,7 @@ Interactions in online social networks, communication networks can be naturally 
 <br>
 Finding communities in large graphs is a very useful technique when trying to narrow down analytics to smaller targeted groups, identifying interest groups etc. This can be used for online marketing, online surveillance etc. 
 <br>
-Detecting communities in graphs is computationally very expensive, specially for large graphs.
+Detecting communities in graphs can be a computationally very expensive task, specially for large graphs.
 </p>
 
 <img src="http://farm8.staticflickr.com/7100/7046439385_b83413587a_b.jpg" height="500" width="500"/>
@@ -23,9 +23,9 @@ Lovain community detection method detect communities in a graph in a hierarchica
 
 <H2>Quick Start With Development VM</H2>
 
-Our distributed memory parallel implementation of Louvain community detection based on MPI 2.0 runtime environemnt. Following instrcutions guide you through how to run a this on a sample graph to detect communities.
+Our distributed memory parallel implementation of Louvain community detection is based on MPI 2.0 runtime environemnt. Following instrcutions guide you through how to run a this implementation on a sample graph to detect communities.
 
-Pre installed virtual machine is used in this guide which can be installed in your local machine. 
+Pre installed virtual machine is used in this guide which can be installed in your local machine. Following installation instructions assume a linux operating system environment.	
 
 <H3>Download Virtual Machine</H3>
 <p> Download the pre installed virtual machine from <a href="http://losangeles.usc.edu/usc-cloud/goffish/parallel-louvain-mpi.zip">here</a>
@@ -68,7 +68,7 @@ More info at http://www.vagrantup.com/
 Log in to the virtual machine
 <code>vagrant ssh</code><br>
 
-Source code is and sample data sets are located in /vagrant/code/louvain-mpi directory.
+Source code and sample data sets are located in /vagrant/code/louvain-mpi directory.
 <code>cd /vagrant/code/louvain-mpi</code><br>
 
 A Sample small graph is located in this directory. <br>
@@ -82,8 +82,6 @@ A Sample small graph is located in this directory. <br>
 <p>
 First step of execution is partitioning the graph and creating the graph partitions for parallel louvain algorithm. This is done using converter-script.sh <br> 
 <code>./converter-script.sh</code><br>
-</p><p>
-Executing this will compile the source code, partition the graph into 2 partitions and create graph partitions.
 </p>
 <br>
 <p>
@@ -93,8 +91,8 @@ To Run the the parallel louvain algorithm run the run-louvain.sh script <br>
 </p><p>
 Executing this script with run the algorithm in two MPI processors and output the community graph at 2nd level of louvain method to level2.txt 
 <br>
-level2.txt contains the graph in adjacency list format.
-each line is in following format
+level2.txt display the community graph in adjacency list format.
+each line is in following format<br>
 source: (sink1 weight1) (sink2 weight2) . . .(sinkN weightN)
 <br>
 </p><p>
