@@ -90,6 +90,8 @@ class Community {
   void partition2graph();
   // displays the current partition (with communities renumbered from 0 to k-1)
   void display_partition();
+  
+  void display_community_graphs(int level);
 
   // generates the binary graph of communities as computed by one_level
   Graph partition2graph_binary();

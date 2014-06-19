@@ -37,6 +37,8 @@ double precision = 0.000001;
 int display_level = -2;
 int k1 = 16;
 
+bool vcomm = false;
+
 bool verbose = false;
 
 void
@@ -87,6 +89,9 @@ parse_args(int argc, char **argv) {
       case 'v':
 	verbose=true;
 	break;
+      case 'c':
+	vcomm=true;
+	break;
       default:
 	usage(argv[0], "Unknown option\n");
       }
@@ -109,7 +114,7 @@ display_time(const char *str) {
 
 int
 main(int argc, char **argv) {
-  srand(time(NULL)+getpid());
+  srand(time(NULL));
 
   parse_args(argc, argv);
   time_t time_begin, time_end;
@@ -139,8 +144,11 @@ main(int argc, char **argv) {
     new_mod = c.modularity();
     if (++level==display_level)
       g.display();
-    if (display_level==-1)
+    if (display_level==-1){
       c.display_partition();
+      if(vcomm)
+        c.display_community_graphs(level);      
+    }
     g = c.partition2graph_binary();
     c = Community(g, -1, precision);
 

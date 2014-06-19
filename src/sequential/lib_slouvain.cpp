@@ -119,7 +119,7 @@ slouvain_main(int argc, char **argv) {
   display_level = -2;
   k1 = 16;
 
-  srand(time(NULL)+getpid());
+  srand(time(NULL));
 
   parse_args(argc, argv);
   time_t time_begin, time_end;
