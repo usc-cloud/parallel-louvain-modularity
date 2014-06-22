@@ -9,6 +9,38 @@ The objectives of this algorithm are two folded:
 *	Quickly unfold highly accurate communities on large potentially distributed graphs 
 *	Allow a hierarchical view of the communities which enables several levels of detail depending on the needed granularity, e.g., individual level, city level, country level
 
+Required Skill Sets
+-------------------
+
+* To use the algorithm on a given data set.
+
+ *Required
+
+  * Familiarity with Linux
+
+  * Manipulating graph data (potentially to convert the given data to the Metis graph format)
+
+  * Ability to run MPI programs on a single node or cluster depending on graph size
+
+ *Good to have
+
+  * To use the quick start guide, familiarity with Virtual Box and virtualization
+
+  * Familiarity with C++ compilation process (make)
+
+  * To integrate the algorithm with other components
+
+  * C++
+
+  * MPI Library
+
+ * To setup the environment on a cluster
+
+  * Cluster administration
+
+  *Setting up MPI environment on cluster
+
+
 Benefits
 --------
 
@@ -18,6 +50,7 @@ Measures of effectiveness
 -------------------------
 
 The algorithm has been tested using MPI on an HPC cluster consisting of 16 nodes with 8 cores per node. Each node consisted of two Quad-core AMD Opteron 2376 2.3GHz processors. Speed-ups of up to 6x have been observed for synthetic community graphs consisting of up to 16M vertices and 60M edges.
+
 
 Future enhancements
 -------------------
