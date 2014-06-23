@@ -13,6 +13,7 @@ Pre-Requisites
 <code>sudo apt-get -y install build-essential g++ python-dev autotools-dev libicu-dev libbz2-dev</code>
 
 <code>sudo apt-get install libcr-dev mpich2 mpich2-doc</code>
+
  * Set up a MPI Cluster (see http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/)
  
 
@@ -26,6 +27,8 @@ Compile
 Once the prerequisite are installed, download the code from the git repository mentioned earlier.
 
 Following is the strucutrue of the source code
+
+<code>
 parallel-louvain-modularity/
 
 ├── conf
@@ -51,7 +54,7 @@ parallel-louvain-modularity/
     └── tools
 
 
-
+</code>
 go to src/parallel directory and run $make to complile the source code
 
 Execution
@@ -61,6 +64,7 @@ You need to have a graph in metis format and edge list format.
 Assume following are sample graphs
 
 *4elt.txt - graph in edge list format.
+
 *4elt.graph - graph in metis graph format.
 
 * First the given graph (in METIS format) needs to be portioned into desired number of partitions. For example
@@ -96,9 +100,12 @@ the general format is:
 
 
 *Number of Processors: This is equal to the number of partitions
+
 *Graph Name: Name of the output graph given in conversion tool
+
 *output level: displays the graph of level k rather than the hierachical structure.
 	if k=-1 then displays the hierarchical structure rather than the graph at a given level 
+
 *verbose : verbose mode: gives computation time, information about the hierarchy and modularity.
 
 
