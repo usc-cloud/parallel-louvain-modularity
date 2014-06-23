@@ -52,6 +52,18 @@ Measures of effectiveness
 The algorithm has been tested using MPI on an HPC cluster consisting of 16 nodes with 8 cores per node. Each node consisted of two Quad-core AMD Opteron 2376 2.3GHz processors. Speed-ups of up to 6x have been observed for synthetic community graphs consisting of up to 16M vertices and 60M edges.
 
 
+How to get it
+---------------
+
+The algorithm is hosted at the git hub repository at https://github.com/usc-cloud/parallel-louvain-modularity
+
+Clone the repository using
+
+<code>git clone https://github.com/usc-cloud/parallel-louvain-modularity.git</code>
+
+Note: You may need to install a git client to download the repository.
+
+
 Future enhancements
 -------------------
 Given the wide spread adoption of the cloud based frameworks a Map Reduce version of the proposed algorithm will be delivered.
@@ -62,4 +74,4 @@ Installation
 
 A quick start guide can be found [here](QuickStart.md) together with a precompiled VM to help you get started.
 
-A detailed guide on how to install the software on a distributed setup can be found [here](/path/to/Louvain-install).
+A detailed guide on how to install the software on a distributed setup can be found [here](GeneralInstallationGuide.md).
