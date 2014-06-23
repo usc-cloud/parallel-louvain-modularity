@@ -27,17 +27,29 @@ Once the prerequisite are installed, download the code from the git repository m
 
 Following is the strucutrue of the source code
 parallel-louvain-modularity/
+
 ├── conf
+
 ├── data
+
 │   └── graphs
+
 ├── opt
+
 │   └── python
+
 └── src
+
     ├── benchmark
+
     ├── parallel   //parallel louvain algorithm
+
     ├── ref
+
     ├── sequential //Sequential louvain algorithm
+
     └── tools
+
 
 
 go to src/parallel directory and run $make to complile the source code
@@ -60,17 +72,22 @@ This will create a partition file 4elt.graph.part.2
 Psuedo Distributed (single node):
 
 Then you need to convert the graph using the conversion tool to binery format. This will create .bin and .remote file for each partition. .bin file contains the local graph for each partition while .remote files contain mappings of cross partition edges.
+
 Example:
+
 <code>./convert -i 4elt.txt -o 4elt -p 4elt.graph.part.2 -n 2</code>
 
 General format is : 
+
 <code>./convert -i <graph in edge list format> -o <output graph name> -p <partition file> -n <number of partitions></code>
 
 
 This will create .bin files with format 4elt_<partition id>.bin and .remote files with format 4elt_<partition id>.remote.
 
 Use the Open MPI’s mpi-run command to start the algorithm using the desired number of processors (NOTE: This should be equal to the number of partitions)
+
 example:
+
 <code>mpirun -np 2 ./community 4elt -r 4elt -l 2 -v > level2.txt</code>
 
 the general format is: 
@@ -127,15 +144,25 @@ Edge List file is just a standered undirected list of edges. Each line correspon
 Following is the edge list for above graph
 
 1 2
+
 1 3
+
 1 4
+
 2 1
+
 2 3
+
 2 4
+
 3 1
+
 3 2
+
 4 1
+
 4 2
+
 
 
 
