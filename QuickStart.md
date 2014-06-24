@@ -2,7 +2,7 @@
 
 <H2>Community Detection In Graphs</H2>
 <p>
-Interactions in online social networks, communication networks can be naturally modeled as graphs. Structural communities in graphs generally defined as groups of highly connected vertices/nodes in the graph. This groups generally represent similar interest groups, friend communities etc., that have more interactions or similarities with each other. 
+Interactions in online social networks, communication networks can be naturally modelled as graphs. Structural communities in graphs generally defined as groups of highly connected vertices/nodes in the graph. These groups generally represent similar interest groups, friend communities etc., that have more interactions or similarities with each other. 
 <br>
 Finding communities in large graphs is a very useful technique when trying to narrow down analytics to smaller targeted groups, identifying interest groups etc. This can be used for online marketing, online surveillance etc. 
 <br>
@@ -13,7 +13,7 @@ Detecting communities in graphs can be a computationally very expensive task, sp
 
 <H2>Parallel Algorithm For Fast Community Detection</H2>
 <p>
-This document provides a quick guide to setting up and running our parallel implementation for <a href="https://sites.google.com/site/findcommunities/">Louvain community detection method</a> to detect non overlapping communities in large graphs . 
+This document provides a quick guide to setting up and running our parallel implementation for <a href="https://sites.google.com/site/findcommunities/"> Louvain community detection method</a> to identify non overlapping communities in large graphs . 
 <br>
 Lovain community detection method detect communities in a graph in a hierarchical manner. At each level detected communities are reduced to vertices, reducing the graph size. This enable zoom in and out of high level communities to find communities at a lower level. 
 </p>
@@ -23,9 +23,9 @@ Lovain community detection method detect communities in a graph in a hierarchica
 
 <H2>Quick Start With Development VM</H2>
 
-Our distributed memory parallel implementation of Louvain community detection is based on MPI 2.0 runtime environemnt. Following instrcutions guide you through how to run a this implementation on a sample graph to detect communities.
+Our distributed memory parallel implementation of Louvain community detection is based on MPI 2.0 runtime environment. Following instructions guide you through how to run a this implementation on a sample graph to detect communities.
 
-Pre installed virtual machine is used in this guide which can be installed in your local machine. Following installation instructions assume a linux operating system environment.	
+Pre installed virtual machine is used in this guide which can be installed in your local machine. Following installation instructions assume a Linux operating system environment.	
 
 <H3>Download Virtual Machine</H3>
 <p> Download the pre installed virtual machine from <a href="http://losangeles.usc.edu/usc-cloud/goffish/parallel-louvain-mpi.zip">here</a>
@@ -35,61 +35,57 @@ Pre installed virtual machine is used in this guide which can be installed in yo
 <p>
 Install Oracle Virtual Box 4.3.8. You can download it from <a href="https://www.virtualbox.org/wiki/Download_Old_Builds_4_3">here</a>.
 <br>
-Install and configure Vagrant<br>
+Install and configure Vagrant:<br>
 <code>sudo apt-get install vagrant</code>
 <br>
-Add Vagrant plugin that keeps Virtual Box Guest Additions in sync.<br>
+Add Vagrant plugin that keeps Virtual Box Guest Additions in sync:<br>
 <code>vagrant plugin install vagrant-vbguest</code>
 <br>
-Extract the downloaded virtual machine<br>
+Extract the downloaded virtual machine.<br>
 
-Go to the virtual machine directory and start the environment<br>
+Go to the virtual machine directory and start the environment:<br>
 <code>vagrant up</code><br>
 <br>
-After it boots, log in to the VM<br>
+After it boots, log in to the VM:<br>
 <code>vagrant ssh</code><br>
 <br>
 Other useful vagrant commands:<br>
-<code>vagrant suspend</code><br>
-Saves the current running state of the machine and stops it. vagrant up will resume.
-
-<code>vagrant halt</code><br>
-Gracefully shuts down the vm. vagrant up will boot it back up.
+<code>vagrant suspend</code> saves the current running state of the machine and stops it. vagrant up will resume.
 <br>
-<code>vagrant destroy</code>
+<code>vagrant halt</code> gracefully shuts down the vm. vagrant up will boot it back up.
 <br>
-Destroys the vm (and all the cruft inside of it). vagrant up will reprovision and run the deploy scripts again.
+<code>vagrant destroy</code> destroys the VM (and all the cruft inside of it). Running <code>vagrant up</code> will reprovision and run the deploy scripts again.
 <br>
 More info at http://www.vagrantup.com/
 </p>
 
 <H3>Running The Sample</H3>
 <p>
-Log in to the virtual machine
+Log in to the virtual machine:
 <code>vagrant ssh</code><br>
 
-Source code and sample data sets are located in /vagrant/code/louvain-mpi directory.
+Source code and sample data sets are located in <i>/vagrant/code/louvain-mpi</i> directory: 
 <code>cd /vagrant/code/louvain-mpi</code><br>
 
 A Sample small graph is located in this directory. <br>
 <ul>
 <li>4elt.txt - graph in edge list format.</li>
-<li>4elt.graph - graph in metis graph format. </li>
+<li>4elt.graph - graph in Metis graph format. </li>
 </ul>
 </p>
 
 <br>
 <p>
-First step of execution is partitioning the graph and creating the graph partitions for parallel louvain algorithm. This is done using converter-script.sh <br> 
+First step of execution is partitioning the graph and creating the graph partitions for the parallel Louvain algorithm. This is done using <i>converter-script.sh</i>: <br> 
 <code>./converter-script.sh</code><br>
 </p>
 <br>
 <p>
-Executing this will compile the source code, partition the graph into 2 partitions and create graph partitions.<br>
-To Run the the parallel louvain algorithm run the run-louvain.sh script <br>
+Executing this will compile the source code, partition the graph into 2 partitions, and create graph partitions.<br>
+To run the the parallel louvain algorithm run the <i>run-louvain.sh</i> script:<br>
 <code>./run-louvain.sh</code>
 </p><p>
-Executing this script with run the algorithm in two MPI processors and output the community graph at 2nd level of louvain method to level2.txt 
+Executing this script with run the algorithm in two MPI processors and output the community graph at 2nd level of louvain method in <i>level2.txt</i>:
 <br>
 level2.txt display the community graph in adjacency list format.
 each line is in following format<br>
@@ -123,7 +119,7 @@ Publications: <br>
 
  <a href="http://www-scf.usc.edu/~cwickram/pubs/wickramaarachchi_hpec_2014.pdf">Fast Parallel Algorithm For Unfolding Of Communities In Large Graphs</a>, 
 Charith Wickramaarachchi, Marc Frincu, Patrick Small and Viktor Prasanna,
-IEEE High Performance Extreme Computing Conference(HPEC '14), 2014
+IEEE High Performance Extreme Computing Conference (HPEC '14), 2014
 
 </p>
 
