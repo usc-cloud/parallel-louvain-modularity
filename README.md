@@ -58,9 +58,9 @@ Clone the repository using
 Note: You may need to install a git client to download the repository.
 
 
-Future enhancements
+MapReduce version
 -------------------
-Given the wide spread adoption of the cloud based frameworks a Map Reduce version of the proposed algorithm will be delivered.
+Given the wide spread adoption of the cloud based frameworks a Map Reduce version of the proposed algorithm was implemented as well and is available [here](https://github.com/usc-cloud/hadoop-louvain-community)
 
 
 Installation
